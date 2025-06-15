@@ -1,0 +1,6 @@
+Technical Specifications:
+
+Frontend: HTML, CSS
+Backend: PHP, JS
+Database: MySQL
+IDE/Platform: Visual Studio Code
