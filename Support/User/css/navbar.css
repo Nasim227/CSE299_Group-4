@@ -1,0 +1,536 @@
+/* Navbar Styles - Fixed Dropdown and Search Issues */
+.navbar {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57) 1;
+    animation: borderShift 3s ease infinite;
+}
+
+@keyframes borderShift {
+    0%, 100% { 
+        border-image: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57) 1;
+    }
+    50% { 
+        border-image: linear-gradient(90deg, #feca57, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4) 1;
+    }
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.navbar li {
+    position: relative;
+}
+
+/* Logo Styling */
+.navbar li:first-child {
+    margin-right: 20px;
+}
+
+.navbar li:first-child img {
+    height: 50px;
+    width: auto;
+    padding: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar li:first-child img:hover {
+    transform: scale(1.1);
+}
+
+/* Regular Navigation Links */
+.navbar a.tt {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 18px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 8px;
+    margin: 5px 2px;
+}
+
+.navbar a.tt::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.navbar a.tt:hover {
+    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar a.tt:hover::before {
+    width: 80%;
+}
+
+/* FIXED: Dropdown Styling with Better Hover Behavior */
+.dropdown {
+    position: relative;
+}
+
+/* Add invisible hover area to prevent dropdown from disappearing */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    z-index: 1001;
+    padding: 15px 0;
+    margin-top: 0px; /* Remove gap that causes hover issues */
+    backdrop-filter: blur(10px);
+    animation: dropdownFadeIn 0.3s ease;
+    /* FIXED: Add padding area to prevent accidental closing */
+    padding-top: 20px;
+}
+
+/* FIXED: Create a bridge between dropdown trigger and content */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    background: transparent;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FIXED: Better hover behavior with delay */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation-delay: 0.1s;
+}
+
+/* FIXED: Keep dropdown open when hovering over content */
+.dropdown-content:hover {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #b8c6db !important;
+    padding: 14px 25px !important;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    margin: 2px 10px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.dropdown-content a::before {
+    content: '▶';
+    position: absolute;
+    left: 8px;
+    color: #4ecdc4;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: rgba(78, 205, 196, 0.15) !important;
+    color: #4ecdc4 !important;
+    padding-left: 35px !important;
+    border-radius: 8px;
+    transform: translateX(5px);
+}
+
+.dropdown-content a:hover::before {
+    opacity: 1;
+}
+
+/* FIXED: Search Section with Click-to-Open Functionality */
+.search {
+    position: relative;
+}
+
+/* FIXED: Make search clickable instead of hover-only */
+.search > a.tt {
+    cursor: pointer;
+}
+
+.search form {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    min-width: 350px;
+    margin-top: 0px;
+    animation: searchFadeIn 0.3s ease;
+    z-index: 1002;
+}
+
+/* FIXED: Show search form on click and keep it open */
+.search.active form {
+    display: block;
+}
+
+/* FIXED: Add close button for search */
+.search form::before {
+    content: '✕';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #b8c6db;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.search form::before:hover {
+    color: #ff6b6b;
+}
+
+@keyframes searchFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.search input[type="text"] {
+    width: 220px;
+    padding: 14px 18px;
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search input[type="text"]:focus {
+    border-color: #4ecdc4;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.search input[type="text"]::placeholder {
+    color: #b8c6db;
+}
+
+.search button {
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    color: #ffffff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 25px;
+    margin-left: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.search button:hover {
+    background: linear-gradient(135deg, #45b7d1, #4ecdc4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+/* Spacer to push login/signup to right */
+.spacer {
+    flex-grow: 1;
+}
+
+/* Login/Signup Links */
+.navbar a.sl {
+    display: block;
+    color: #4ecdc4;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    border-radius: 25px;
+    margin: 5px 5px;
+    background: rgba(78, 205, 196, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar a.sl::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.navbar a.sl:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    border-color: #4ecdc4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+.navbar a.sl:hover::before {
+    left: 100%;
+}
+
+/* Profile Link Special Styling */
+.navbar a.sl:first-of-type {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.navbar a.sl:first-of-type:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    border-color: #ff6b6b;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* FIXED: Mobile Dropdown Behavior */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+    
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar li:first-child {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .navbar a.tt,
+    .navbar a.sl {
+        margin: 2px 0;
+        text-align: center;
+    }
+    
+    .spacer {
+        display: none;
+    }
+    
+    /* FIXED: Mobile dropdown behavior */
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 5px 0;
+        border-radius: 8px;
+        padding: 10px 0;
+        min-width: auto;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    /* FIXED: Mobile search behavior */
+    .search form {
+        position: static;
+        display: none;
+        margin: 10px 0;
+        border-radius: 8px;
+        min-width: auto;
+        padding: 15px;
+    }
+    
+    .search.active form {
+        display: block;
+    }
+    
+    .search input[type="text"] {
+        width: 70%;
+        margin-bottom: 10px;
+    }
+    
+    .search button {
+        width: 25%;
+        margin-left: 5%;
+    }
+}
+
+/* Rest of the responsive styles remain the same... */
+@media (max-width: 1024px) {
+    .navbar ul {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+    
+    .navbar a.tt {
+        padding: 15px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-content {
+        min-width: 200px;
+    }
+    
+    .search form {
+        min-width: 300px;
+    }
+    
+    .search input[type="text"] {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0;
+    }
+    
+    .navbar ul {
+        padding: 5px;
+    }
+    
+    .navbar li:first-child img {
+        height: 40px;
+    }
+    
+    .navbar a.tt {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .navbar a.sl {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        margin: 2px 0;
+    }
+    
+    .dropdown-content a {
+        padding: 10px 15px !important;
+        font-size: 0.85rem;
+    }
+    
+    .search input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .search button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Loading Animation */
+.navbar {
+    animation: navbarSlideDown 0.6s ease-out;
+}
+
+@keyframes navbarSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Active Page Indicator */
+.navbar a.tt.active {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+}
+
+.navbar a.tt.active::before {
+    width: 80%;
+}
+
+/* Smooth Scrolling Enhancement */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Focus States for Accessibility */
+.navbar a:focus {
+    outline: 2px solid #4ecdc4;
+    outline-offset: 2px;
+}
+
+.search input:focus {
+    outline: 2px solid #4ecdc4;
+    outline-offset: 2px;
+}
+
+.search button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
