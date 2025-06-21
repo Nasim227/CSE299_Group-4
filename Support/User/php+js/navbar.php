@@ -29,7 +29,7 @@
 
 <nav class="navbar">
     <ul>
-        <li><a href="index.php"><img src="Images/logo2.png"></a></li>
+        <li><a href="index.php"><img src="../Images/logo2.png"></a></li>
         <li><a href="index.php" class="tt">Home</a></li>
 
         <li class="dropdown">
