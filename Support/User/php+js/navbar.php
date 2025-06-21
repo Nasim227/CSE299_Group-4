@@ -68,7 +68,7 @@
                 </form>
         </li>
 
-        <li><a href="#" class="tt">Compare</a></li>
+        <li><a href="compare.php" class="tt">Compare</a></li>
         <li><a href="aboutus.php" class="tt">About us</a></li>
 
         <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "admin"): ?>
@@ -78,7 +78,7 @@
         <li class="spacer"></li>
 
         <?php if (isset($_SESSION["username"])): ?>
-            <li><a href="#" class="sl"><?= $_SESSION["username"] ?>' Profile</a></li>
+            <li><a href="#" class="sl"><?= $_SESSION["username"] ?>'s Profile</a></li>
             <li><a href="logout.php" class="sl">Logout</a></li>
         <?php else: ?>
             <li><a href="signup.php" class="sl">Sign UP</a></li>
@@ -89,36 +89,29 @@
 
 
 <script>
-// Navbar JavaScript for Click-based Dropdowns and Search
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Handle dropdown clicks for mobile and desktop
     const dropdowns = document.querySelectorAll('.dropdown');
     const searchElement = document.querySelector('.search');
     
-    // Dropdown functionality
     dropdowns.forEach(dropdown => {
         const dropdownLink = dropdown.querySelector('a.tt');
         
         dropdownLink.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Close other dropdowns
             dropdowns.forEach(otherDropdown => {
                 if (otherDropdown !== dropdown) {
                     otherDropdown.classList.remove('active');
                 }
             });
             
-            // Close search if open
             searchElement.classList.remove('active');
             
-            // Toggle current dropdown
             dropdown.classList.toggle('active');
         });
     });
     
-    // Search functionality
     if (searchElement) {
         const searchLink = searchElement.querySelector('a.tt');
         const searchForm = searchElement.querySelector('form');
@@ -127,15 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
         searchLink.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Close all dropdowns
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
             });
             
-            // Toggle search
             searchElement.classList.toggle('active');
             
-            // Focus on input when opened
             if (searchElement.classList.contains('active')) {
                 setTimeout(() => {
                     searchInput.focus();
@@ -143,18 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Keep search open while typing
         searchInput.addEventListener('focus', function() {
             searchElement.classList.add('active');
         });
         
-        // Don't close search while user is typing
         searchInput.addEventListener('input', function() {
             searchElement.classList.add('active');
         });
     }
     
-    // Close dropdowns and search when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown') && !e.target.closest('.search')) {
             dropdowns.forEach(dropdown => {
@@ -166,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Handle escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             dropdowns.forEach(dropdown => {
@@ -178,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Improve hover behavior for desktop
     if (window.innerWidth > 768) {
         dropdowns.forEach(dropdown => {
             let hoverTimeout;
@@ -191,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.addEventListener('mouseleave', function() {
                 hoverTimeout = setTimeout(() => {
                     dropdown.classList.remove('active');
-                }, 500); // 500ms delay before closing
+                }, 500); 
             });
         });
     }
