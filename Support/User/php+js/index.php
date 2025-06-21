@@ -20,10 +20,9 @@
 <!DOCTYPE html>
  <html>
  <head>
-       <link rel="icon" type="image/png" href="images/logo2.png">
+       <link rel="icon" type="image/png" href="../Images/logo2.png">
       <title>Dream Ride</title> 
-      <link rel = "stylesheet" href="indec.css">
-      <link rel="stylesheet" href="bbrrnds.css">
+      <link rel="stylesheet" href="../css/index.css">
       <script src="https://kit.fontawesome.com/7139f829c6.js" crossorigin="anonymous"></script>
    </head>
 
@@ -32,14 +31,14 @@
         <?php include("navbar.php"); ?>
 
         <main>
-            <img src="Images/hmeback2.png" width="1256px">
-            <h2 style="text-align: center;">Welcome to dream Ride,</h2>
+            <img src="../Images/hmeback2.png" width="1256px">
+            <h2 style="text-align: center;">Welcome to dream Ride</h2>
 
             <p class="pr" style="margin-left: 15px;"> Your trusted destination for premium bikes and scooters in Dhaka, Bangladesh. We take pride in being one of the leading retailers of two-wheelers, offering an extensive range of motorcycles, scooters, and accessories to cater to every rider’s needs. Whether you are a daily commuter, an adventure enthusiast, or a first-time rider, we have the perfect ride for you!</p>
 
             <br>
 
-            <u><h2 style="text-align: center;">Our Proud Partners</h2></u>
+            <h2 style="text-align: center;">Our Proud Partners</h2>
 
             <?php
                 $companies = [];
@@ -70,7 +69,7 @@
                     ?>
                     <div class="bik">
                         <a target="_blank">
-                            <img src="<?php echo htmlspecialchars($pic); ?>" alt="<?php echo htmlspecialchars($name); ?>">
+                            <img src="../<?php echo htmlspecialchars($pic); ?>" alt="<?php echo htmlspecialchars($name); ?>">
                         </a>
                         <div class="description"><?php echo htmlspecialchars($name); ?></div>
                     </div>
@@ -79,35 +78,36 @@
 
             <br>
 
-            <u><h2 style="text-align: center;">Our Products</h2></u>
+            <h2 style="text-align: center;">Our Products</h2>
 
-            
+            <div class="products-wrapper">
     <div class="bik">
         <a href="shwprdcts.php?category=Bikes">
-            <img src="Images/bike.jpg">
+            <img src="../Images/bike.jpg">
         </a>
         <div class="description">Bike</div>
     </div>
 
     <div class="bik">
         <a href="shwprdcts.php?category=Scooters">
-            <img src="Images/scooter.jpg">
+            <img src="../Images/scooter.jpg">
         </a>
         <div class="description">Scooter</div>
     </div>
 
     <div class="bik">
         <a href="shwprdcts.php?category=Engine_oil">
-            <img src="Images/castrol.jpg">
+            <img src="../Images/castrol.jpg">
         </a>
         <div class="description">Engine Oil</div>
     </div>
 
     <div class="bik">
         <a href="shwprdcts.php?category=Helmet">
-            <img src="Images/helmet.jpg">
+            <img src="../Images/helmet.jpg">
         </a>
         <div class="description">Helmet</div>
+    </div>
     </div>
 
 
@@ -120,3 +120,4 @@
 
     </body>
  </html>
+

@@ -1,4 +1,3 @@
-/* Navbar Styles - Fixed Dropdown and Search Issues */
 .navbar {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     padding: 0;
@@ -36,7 +35,6 @@
     position: relative;
 }
 
-/* Logo Styling */
 .navbar li:first-child {
     margin-right: 20px;
 }
@@ -52,7 +50,6 @@
     transform: scale(1.1);
 }
 
-/* Regular Navigation Links */
 .navbar a.tt {
     display: block;
     color: #ffffff;
@@ -89,12 +86,10 @@
     width: 80%;
 }
 
-/* FIXED: Dropdown Styling with Better Hover Behavior */
 .dropdown {
     position: relative;
 }
 
-/* Add invisible hover area to prevent dropdown from disappearing */
 .dropdown::before {
     content: '';
     position: absolute;
@@ -118,14 +113,12 @@
     border: 1px solid rgba(78, 205, 196, 0.2);
     z-index: 1001;
     padding: 15px 0;
-    margin-top: 0px; /* Remove gap that causes hover issues */
+    margin-top: 0px;
     backdrop-filter: blur(10px);
     animation: dropdownFadeIn 0.3s ease;
-    /* FIXED: Add padding area to prevent accidental closing */
     padding-top: 20px;
 }
 
-/* FIXED: Create a bridge between dropdown trigger and content */
 .dropdown-content::before {
     content: '';
     position: absolute;
@@ -147,13 +140,11 @@
     }
 }
 
-/* FIXED: Better hover behavior with delay */
 .dropdown:hover .dropdown-content {
     display: block;
     animation-delay: 0.1s;
 }
 
-/* FIXED: Keep dropdown open when hovering over content */
 .dropdown-content:hover {
     display: block;
 }
@@ -193,12 +184,10 @@
     opacity: 1;
 }
 
-/* FIXED: Search Section with Click-to-Open Functionality */
 .search {
     position: relative;
 }
 
-/* FIXED: Make search clickable instead of hover-only */
 .search > a.tt {
     cursor: pointer;
 }
@@ -219,12 +208,10 @@
     z-index: 1002;
 }
 
-/* FIXED: Show search form on click and keep it open */
 .search.active form {
     display: block;
 }
 
-/* FIXED: Add close button for search */
 .search form::before {
     content: '✕';
     position: absolute;
@@ -292,12 +279,10 @@
     box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
 }
 
-/* Spacer to push login/signup to right */
 .spacer {
     flex-grow: 1;
 }
 
-/* Login/Signup Links */
 .navbar a.sl {
     display: block;
     color: #4ecdc4;
@@ -337,7 +322,6 @@
     left: 100%;
 }
 
-/* Profile Link Special Styling */
 .navbar a.sl:first-of-type {
     background: rgba(255, 107, 107, 0.1);
     border-color: rgba(255, 107, 107, 0.3);
@@ -345,12 +329,12 @@
 }
 
 .navbar a.sl:first-of-type:hover {
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    background: linear-gradient(135deg, #000000, #000000);
+    color: #ff2525;
     border-color: #ff6b6b;
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
-/* FIXED: Mobile Dropdown Behavior */
 @media (max-width: 768px) {
     .navbar {
         position: relative;
@@ -382,7 +366,6 @@
         display: none;
     }
     
-    /* FIXED: Mobile dropdown behavior */
     .dropdown-content {
         position: static;
         display: none;
@@ -397,7 +380,6 @@
         display: block;
     }
     
-    /* FIXED: Mobile search behavior */
     .search form {
         position: static;
         display: none;
@@ -422,7 +404,6 @@
     }
 }
 
-/* Rest of the responsive styles remain the same... */
 @media (max-width: 1024px) {
     .navbar ul {
         flex-wrap: wrap;
@@ -487,7 +468,6 @@
     }
 }
 
-/* Loading Animation */
 .navbar {
     animation: navbarSlideDown 0.6s ease-out;
 }
@@ -503,7 +483,6 @@
     }
 }
 
-/* Active Page Indicator */
 .navbar a.tt.active {
     background: rgba(78, 205, 196, 0.2);
     color: #4ecdc4;
@@ -513,13 +492,11 @@
     width: 80%;
 }
 
-/* Smooth Scrolling Enhancement */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
 
-/* Focus States for Accessibility */
 .navbar a:focus {
     outline: 2px solid #4ecdc4;
     outline-offset: 2px;
