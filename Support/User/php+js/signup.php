@@ -44,10 +44,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <link rel="icon" type="image/png" href="images/logo2.png">
+       <link rel="icon" type="image/png" href="../Images/logo2.png">
       <title>Dream Ride</title> 
-      <link rel="stylesheet" href="sgnup.css">
-      <link rel="stylesheet" href="footer.css">
+      <link rel="stylesheet" href="../css/siignup.css">
       <script src="https://kit.fontawesome.com/7139f829c6.js" crossorigin="anonymous"></script>
    </head>
 

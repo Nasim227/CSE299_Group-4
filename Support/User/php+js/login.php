@@ -55,10 +55,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <link rel="icon" type="image/png" href="images/logo2.png">
+       <link rel="icon" type="image/png" href="../images/logo2.png">
       <title>Dream Ride</title> 
-      <link rel="stylesheet" href="lgn.css">
-      <link rel="stylesheet" href="footer.css">
+      <link rel="stylesheet" href="../css/login.css">
       <script src="https://kit.fontawesome.com/7139f829c6.js" crossorigin="anonymous"></script>
    </head>
 

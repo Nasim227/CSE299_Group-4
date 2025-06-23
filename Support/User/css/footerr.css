@@ -10,10 +10,10 @@
 .site-footer::before {
     content: '';
     position: absolute;
-    top: -40px;
+    top: -60px;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 60px;
     background: #ffffff;
     z-index: 1;
 }
@@ -187,7 +187,7 @@
 
 .developer-section {
     background: rgba(255, 255, 255, 0.05);
-    padding: 0px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
     border-radius: 15px;
     margin-bottom: 20px;
     border: 1px solid rgba(78, 205, 196, 0.2);
@@ -287,8 +287,8 @@
     }
     
     .site-footer::before {
-        top: -28px;
-        height: 28px;
+        top: -35px;
+        height: 35px;
     }
     
     .footer-content {
