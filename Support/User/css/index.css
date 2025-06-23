@@ -146,7 +146,7 @@ main > div[style*="display: flex"] {
 }
 
 .bik .description {
-    color: #2c3e50;
+    color: #5a748f;
     font-size: 1.3rem;
     font-weight: 600;
     margin-top: 15px;
@@ -155,7 +155,7 @@ main > div[style*="display: flex"] {
 }
 
 .bik:hover .description {
-    color: #3498db;
+    color: #000000;
     transform: translateY(-2px);
 }
 
