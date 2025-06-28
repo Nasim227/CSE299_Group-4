@@ -1,0 +1,378 @@
+/* About Us Page Styles - Non-interfering with navbar and footer */
+
+/* Only target the main content area */
+main {
+    max-width: 1200px;
+    margin: 40px auto !important;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Add decorative gradient border only to main */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 300% 300%;
+    animation: aboutGradientShift 3s ease infinite;
+}
+
+@keyframes aboutGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Body background only */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/* Typography - only inside main */
+main h3 {
+    color: #1a1a2e;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 35px 0 20px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+main h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 30px;
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    border-radius: 3px;
+}
+
+/* First heading special styling */
+main h3:first-of-type {
+    font-size: 2.2rem;
+    color: #4ecdc4;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+main h3:first-of-type::before {
+    display: none;
+}
+
+main h3:first-of-type::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Paragraph Styling - only inside main */
+main p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    padding: 0 10px;
+    position: relative;
+    border-left: 3px solid transparent;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+}
+
+main p:hover {
+    border-left-color: rgba(78, 205, 196, 0.3);
+    background: rgba(78, 205, 196, 0.02);
+    border-radius: 0 8px 8px 0;
+}
+
+/* List Styling - only inside main */
+main ul {
+    margin: 25px 0;
+    padding-left: 40px;
+}
+
+main li {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    position: relative;
+    list-style: none;
+}
+
+main li::before {
+    content: '▶';
+    position: absolute;
+    left: -25px;
+    color: #4ecdc4;
+    font-size: 0.9rem;
+    top: 2px;
+}
+
+main li:hover {
+    color: #333;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Special Styling for Numbered Points - only inside main */
+main p:nth-of-type(n+10):nth-of-type(-n+14) {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(69, 183, 209, 0.05));
+    border-left: 4px solid #4ecdc4;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 0 12px 12px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+main p:nth-of-type(n+10):nth-of-type(-n+14)::before {
+    content: counter(about-benefit-counter);
+    counter-increment: about-benefit-counter;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+}
+
+/* Initialize counter only for main */
+main {
+    counter-reset: about-benefit-counter;
+}
+
+/* Location Section Special Styling - only inside main */
+main h3:last-of-type {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+main h3:last-of-type::before {
+    display: none;
+}
+
+main h3:last-of-type::after {
+    content: '📍';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+/* Location address styling - only inside main */
+main p:last-of-type {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(254, 202, 87, 0.1));
+    border: 2px solid rgba(255, 107, 107, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+main p:last-of-type::before {
+    content: '🏢';
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design - only affecting main */
+@media (max-width: 768px) {
+    main {
+        margin: 20px 15px !important;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    main h3 {
+        font-size: 1.5rem;
+        margin: 25px 0 15px 0;
+    }
+    
+    main h3:first-of-type {
+        font-size: 1.8rem;
+    }
+    
+    main p {
+        font-size: 1rem;
+        padding: 0 5px;
+        text-align: left;
+    }
+    
+    main li {
+        font-size: 1rem;
+    }
+    
+    main ul {
+        padding-left: 30px;
+    }
+    
+    main p:nth-of-type(n+10):nth-of-type(-n+14) {
+        padding: 12px 15px;
+        margin: 10px 0;
+    }
+    
+    main p:nth-of-type(n+10):nth-of-type(-n+14)::before {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+        left: -12px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 15px 10px !important;
+        padding: 20px 15px;
+    }
+    
+    main h3 {
+        font-size: 1.3rem;
+        padding-left: 15px;
+    }
+    
+    main h3::before {
+        width: 4px;
+        height: 25px;
+    }
+    
+    main h3:first-of-type {
+        font-size: 1.6rem;
+    }
+    
+    main p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding-left: 15px;
+    }
+    
+    main li {
+        font-size: 0.95rem;
+    }
+    
+    main ul {
+        padding-left: 25px;
+    }
+    
+    main li::before {
+        left: -20px;
+    }
+}
+
+/* Smooth Animations - only for main */
+main {
+    animation: aboutFadeInUp 0.8s ease-out;
+}
+
+@keyframes aboutFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Animation for Elements inside main */
+main h3, main p, main ul {
+    opacity: 0;
+    animation: aboutSlideInLeft 0.6s ease-out forwards;
+}
+
+main h3:nth-of-type(1) { animation-delay: 0.1s; }
+main h3:nth-of-type(2) { animation-delay: 0.2s; }
+main h3:nth-of-type(3) { animation-delay: 0.3s; }
+main h3:nth-of-type(4) { animation-delay: 0.4s; }
+main h3:nth-of-type(5) { animation-delay: 0.5s; }
+main h3:nth-of-type(6) { animation-delay: 0.6s; }
+main h3:nth-of-type(7) { animation-delay: 0.7s; }
+
+@keyframes aboutSlideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Selection Styling - only inside main */
+main ::selection {
+    background: rgba(78, 205, 196, 0.3);
+    color: #1a1a2e;
+}
+
+main ::-moz-selection {
+    background: rgba(78, 205, 196, 0.3);
+    color: #1a1a2e;
+}
+
+/* Focus Styles for Accessibility - only for main */
+main:focus {
+    outline: 2px solid #4ecdc4;
+    outline-offset: 4px;
+}
+
+/* Print Styles - only affecting main */
+@media print {
+    main {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    main::before {
+        display: none;
+    }
+    
+    main h3:last-of-type::after {
+        display: none;
+    }
+    
+    main p:last-of-type::before {
+        display: none;
+    }
+}
