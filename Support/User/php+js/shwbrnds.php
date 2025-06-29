@@ -21,7 +21,6 @@
     if (isset($_GET['category'])) {
         $category = htmlspecialchars($_GET['category']);
         
-        // Convert plural to singular for display
         $displayCategory = $category;
         if ($category === 'Bikes') {
             $displayCategory = 'Bike';
