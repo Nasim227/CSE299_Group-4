@@ -110,7 +110,7 @@ function getNextAvailableSlot($maxCompare) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link rel="icon" type="image/png" href="../images/logo2.png">
     <title>Compare Products - Dream Ride</title>
     <link rel="stylesheet" href="../css/brands.css">
     <link rel="stylesheet" href="../css/compare.css">
@@ -125,7 +125,7 @@ function getNextAvailableSlot($maxCompare) {
         <h1 class="compare-title">Compare Products</h1>
         <p class="compare-subtitle">Compare up to <?php echo $maxCompare; ?> products side by side</p>
 
-        <!-- Search Section -->
+
         <div class="search-section">
             <h3>Add Products to Compare</h3>
             <form method="GET" class="search-form">
@@ -155,7 +155,7 @@ function getNextAvailableSlot($maxCompare) {
                         $nextSlot = getNextAvailableSlot($maxCompare);
                         ?>
                         <div class="search-result-card">
-                            <img src="<?php echo htmlspecialchars($result['Product_pic']); ?>" 
+                            <img src="../<?php echo htmlspecialchars($result['Product_pic']); ?>" 
                                  alt="<?php echo htmlspecialchars($result['Product_name']); ?>"
                                  class="search-result-image">
                             <h4 class="search-result-title"><?php echo htmlspecialchars($result['Product_name']); ?></h4>
@@ -192,7 +192,7 @@ function getNextAvailableSlot($maxCompare) {
             <?php endif; ?>
         </div>
 
-        <!-- Comparison Table -->
+      
         <?php if (!empty($compareProducts)): ?>
             <div class="comparison-table-container">
                 <table class="comparison-table">
@@ -238,7 +238,7 @@ function getNextAvailableSlot($maxCompare) {
                                         
                                         echo http_build_query($params);
                                     ?>" class="remove-product">[×]</a>
-                                    <img src="<?php echo htmlspecialchars($product['Product_pic']); ?>" 
+                                    <img src="../<?php echo htmlspecialchars($product['Product_pic']); ?>" 
                                          alt="<?php echo htmlspecialchars($product['Product_name']); ?>"
                                          class="product-image">
                                     <h4 class="product-name"><?php echo htmlspecialchars($product['Product_name']); ?></h4>

@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="images/logo2.png">
+        <link rel="icon" type="image/png" href="../Images//logo2.png">
         <title>About Us - Dream Ride</title>
         <script src="https://kit.fontawesome.com/7139f829c6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../css/aboutus.css">

@@ -39,7 +39,7 @@ if (isset($_GET['product'])) {
             echo '
             <div class="bik">
                 <div class="product-image">
-                    <img src="' . htmlspecialchars($row['Product_pic']) . '" alt="' . htmlspecialchars($row['Product_name']) . '">
+                    <img src="../' . htmlspecialchars($row['Product_pic']) . '" alt="' . htmlspecialchars($row['Product_name']) . '">
                 </div>
                 <div class="description">
                     <h2>' . htmlspecialchars($row['Product_name']) . '</h2>';
