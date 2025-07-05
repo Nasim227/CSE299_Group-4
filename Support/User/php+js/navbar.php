@@ -74,7 +74,7 @@
         <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "admin"): ?>
             <li><a href="more.php" class="tt">Management</a></li>
         <?php endif; ?>
-
+         <li><a href="cart.php" class="tt">Cart</a></li>
         <li class="spacer"></li>
 
         <?php if (isset($_SESSION["username"])): ?>
