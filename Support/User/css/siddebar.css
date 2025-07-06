@@ -1,0 +1,252 @@
+.sidebar {
+    width: 200px; 
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin: 0 0 8px 0;
+    color: #000000;
+    font-size: 15px; 
+    font-weight: 600;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 4px; 
+}
+
+.filter-section {
+    margin-bottom: 10px; 
+    padding-bottom: 3px; 
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 8px; 
+}
+
+.filter-section strong {
+    display: block;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px; 
+    text-transform: uppercase;
+    letter-spacing: 0.2px; 
+}
+
+.sidebar input[type="radio"] {
+    margin-right: 4px;
+    accent-color: #000000;
+}
+
+.sidebar label {
+    display: block;
+    margin-bottom: 2px;
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 1px 0; 
+    transition: color 0.2s ease;
+    line-height: 1.2; 
+}
+
+.sidebar label:hover {
+    color: #000000;
+}
+
+.sidebar input[type="checkbox"] {
+    margin-right: 4px;
+    accent-color: #000000;
+}
+
+.brand-category {
+    margin: 6px 0 2px 0;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-left: 2px solid #000000;
+    padding-left: 4px; 
+}
+
+.brand-category:first-of-type {
+    margin-top: 3px; 
+}
+
+.price-inputs {
+    display: flex;
+    gap: 6px; 
+    align-items: center;
+}
+
+.price-input-group {
+    flex: 1;
+}
+
+.price-input-group label {
+    font-size: 10px; 
+    color: #7f8c8d;
+    margin-bottom: 2px; 
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.sidebar input[type="number"] {
+    width: 100%;
+    padding: 4px 6px; 
+    border: 1px solid #ddd;
+    border-radius: 2px; 
+    font-size: 11px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar input[type="number"]:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); 
+}
+
+.sidebar button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 8px 12px; 
+    border-radius: 3px; 
+    font-size: 12px; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.2px; 
+    margin-top: 4px; 
+}
+
+.sidebar button[type="submit"]:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3); 
+}
+
+.sidebar button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.clear-filters-btn {
+    background: #dc3545 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 15px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    display: block !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.clear-filters-btn:hover {
+    background: #c82333 !important;
+}
+
+.clear-filters-btn:disabled {
+    background: #6c757d !important;
+    cursor: not-allowed !important;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0;
+        padding: 8px; 
+    }
+    
+    .price-inputs {
+        flex-direction: column;
+        gap: 4px; 
+    }
+    
+    .sidebar h3 {
+        font-size: 14px;
+    }
+}
+
+.sidebar input[type="radio"]:focus,
+.sidebar input[type="checkbox"]:focus {
+    outline: 1px solid #000000; 
+    outline-offset: 1px;
+}
+
+.sidebar.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.sidebar.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px; 
+    height: 14px; 
+    margin: -7px 0 0 -7px; 
+    border: 2px solid #000000;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sidebar form {
+    margin: 0;
+}
+
+.sidebar input[type="radio"] + span,
+.sidebar input[type="checkbox"] + span {
+    margin-left: 1px;
+}
+
+.brand-category + label {
+    margin-top: 1px; 
+}
+
+.sidebar * {
+    box-sizing: border-box;
+}
+
+.sidebar input[type="radio"],
+.sidebar input[type="checkbox"] {
+    transform: scale(0.9); 
+}
+
+.sidebar input,
+.sidebar button {
+    margin: 0;
+}
