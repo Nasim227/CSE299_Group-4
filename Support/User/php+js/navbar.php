@@ -78,7 +78,7 @@
         <li class="spacer"></li>
 
         <?php if (isset($_SESSION["username"])): ?>
-            <li><a href="#" class="sl"><?= $_SESSION["username"] ?>'s Profile</a></li>
+            <li><a href="usrprfile.php" class="sl"><?= $_SESSION["username"] ?>'s Profile</a></li>
             <li><a href="logout.php" class="sl">Logout</a></li>
         <?php else: ?>
             <li><a href="signup.php" class="sl">Sign UP</a></li>
