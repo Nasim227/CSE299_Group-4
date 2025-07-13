@@ -22,7 +22,7 @@
  <head>
        <link rel="icon" type="image/png" href="../Images/logo2.png">
       <title>Dream Ride</title> 
-      <link rel="stylesheet" href="../css/index.css">
+      <link rel="stylesheet" href="../css/indx.css">
       <script src="https://kit.fontawesome.com/7139f829c6.js" crossorigin="anonymous"></script>
    </head>
 
@@ -31,7 +31,7 @@
         <?php include("navbar.php"); ?>
 
         <main>
-            <img src="../Images/hmeback2.png" width="1256px">
+            <video src="/CSE299/CSE299_Group-4/Data/Dreamride1.mp4" autoplay loop muted playsinline></video>
             <h2 style="text-align: center;">Welcome to dream Ride</h2>
 
             <p class="pr" style="margin-left: 15px;"> Your trusted destination for premium bikes and scooters in Dhaka, Bangladesh. We take pride in being one of the leading retailers of two-wheelers, offering an extensive range of motorcycles, scooters, and accessories to cater to every rider’s needs. Whether you are a daily commuter, an adventure enthusiast, or a first-time rider, we have the perfect ride for you!</p>
