@@ -1,0 +1,255 @@
+.cart-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+.cart-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .user-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1565c0;
+        }
+        
+        .filter-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .filter-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .filter-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .filter-btn.active {
+            background-color: #28a745;
+        }
+        
+        .tab-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+            font-weight: bold;
+        }
+        
+        .tab-btn:hover {
+            color: #007bff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .cart-item.bought {
+            background: #f0f8f0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .cart-item.booked {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+        }
+        
+        .item-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        
+        .item-details {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .item-details h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .item-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-booked {
+            background-color: #cce5ff;
+            color: #0066cc;
+        }
+        
+        .status-bought {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        
+        .empty-cart a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .empty-cart a:hover {
+            text-decoration: underline;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .date-group {
+            background: #e8f4f8;
+            padding: 10px;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #007bff;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card.booked {
+            border-top: 3px solid #007bff;
+        }
+        
+        .stat-card.bought {
+            border-top: 3px solid #28a745;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .stat-number.bought {
+            color: #28a745;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+            text-align: center;
+        }
