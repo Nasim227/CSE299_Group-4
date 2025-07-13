@@ -33,7 +33,6 @@
             </div>
             
             <div class="session-info">
-                <p><strong>Current Session Started:</strong> <?php echo date('F j, Y g:i A', strtotime($_SESSION['login_time'])); ?></p>
                 <p>Showing products booked during this login session</p>
                 <a href="booking_history.php" class="view-history-btn">View Full Booking History</a>
             </div>
