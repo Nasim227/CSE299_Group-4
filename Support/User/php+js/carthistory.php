@@ -15,8 +15,8 @@
 <head>
     <link rel="icon" type="image/png" href="../images/logo2.png">
     <title>My Complete History - Dream Ride</title>
-    <link rel="stylesheet" href="../prinfo.css">
-    <link rel="stylesheet" href="../carthistory.css">
+    <link rel="stylesheet" href="../css/prinfo.css">
+    <link rel="stylesheet" href="../css/carthistory.css">
 </head>
 <body>
     <?php include("navbar.php"); ?>

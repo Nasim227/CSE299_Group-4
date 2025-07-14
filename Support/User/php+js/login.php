@@ -26,12 +26,6 @@
                     $_SESSION["email"] = $user["Email"];              
                     $_SESSION["contact_no"] = $user["Contact_no"];
 
-                    if ($Email === "admin@dreamride.com") {
-                        $_SESSION["role"] = "admin";
-                    } else {
-                        $_SESSION["role"] = "user";
-                    }
-    
                     $redirect = isset($_SESSION['redirect_back']) ? $_SESSION['redirect_back'] : 'index.php';
                     unset($_SESSION['redirect_back']);
                     header("Location: $redirect");
