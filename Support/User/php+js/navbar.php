@@ -71,7 +71,9 @@
         <li><a href="compare.php" class="tt">Compare</a></li>
         <li><a href="aboutus.php" class="tt">About us</a></li>
 
-         <li><a href="cart.php" class="tt">Cart</a></li>
+        <?php if (isset($_SESSION["username"])): ?>
+            <li><a href="cart.php" class="tt">Cart</a></li>
+        <?php endif; ?>
         <li class="spacer"></li>
 
         <?php if (isset($_SESSION["username"])): ?>

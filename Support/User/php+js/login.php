@@ -25,6 +25,7 @@
                     $_SESSION["name"] = $user["Name"];   
                     $_SESSION["email"] = $user["Email"];              
                     $_SESSION["contact_no"] = $user["Contact_no"];
+                    $_SESSION['login_time'] = date('Y-m-d H:i:s'); 
 
                     $redirect = isset($_SESSION['redirect_back']) ? $_SESSION['redirect_back'] : 'index.php';
                     unset($_SESSION['redirect_back']);
