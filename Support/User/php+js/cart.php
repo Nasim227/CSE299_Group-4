@@ -34,7 +34,7 @@
             
             <div class="session-info">
                 <p>Showing products booked during this login session</p>
-                <a href="booking_history.php" class="view-history-btn">View Full Booking History</a>
+                <a href="carthistory.php" class="view-history-btn">View Full Booking History</a>
             </div>
 
             <?php
