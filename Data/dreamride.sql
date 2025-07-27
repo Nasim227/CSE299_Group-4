@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2025 at 04:38 PM
+-- Generation Time: Jul 27, 2025 at 08:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,7 +93,12 @@ CREATE TABLE `booked` (
 --
 
 INSERT INTO `booked` (`Name`, `Email`, `Contact_no`, `Company_name`, `Product_type`, `Product_name`, `Product_id`, `Quantity`, `Booked_date`) VALUES
-('Admin', 'admin@dreamride.com', '01953150933', 'Castrol', 'engine_oil', 'Castrol 2L', 'castrol111', 2, '2025-04-14 00:00:00'),
+('Murad', 'murad@dr.com', '01745877767', 'Suzuki', 'bike', 'GIXXER SF', 'Gixxer112', 1, '2025-07-04 16:31:51'),
+('Murad', 'murad@dr.com', '01745877767', 'Suzuki', 'bike', 'GIXXER SF', 'Gixxer112', 1, '2025-07-05 15:46:36'),
+('Murad', 'murad@dr.com', '01745877767', 'Honda', 'bike', 'CBR 150R', 'honda112', 1, '2025-07-06 21:06:34'),
+('Murad', 'murad@dr.com', '01745877767', 'Mobil', 'engine_oil', 'Mobil 2L', 'mobil111', 1, '2025-07-04 16:54:08'),
+('Murad', 'murad@dr.com', '01745877767', 'TVS', 'bike', 'Apache RTR 160 2V', 'tvs113', 1, '2025-07-27 19:03:27'),
+('Murad', 'murad@dr.com', '01745877767', 'Yamaha', 'bike', 'MT15 – V1', 'yamaha113', 1, '2025-07-27 18:59:19'),
 ('Nasim', 'nasim@gmail.com', '01953150933', 'Castrol', 'engine_oil', 'Castrol 4L', 'castrol112', 4, '2025-04-14 00:00:00'),
 ('Nasim', 'nasim@gmail.com', '01953150933', 'Suzuki', 'bike', 'GIXXER', 'Gixxer113', 1, '2025-04-15 00:00:00'),
 ('Nasim', 'nasim@gmail.com', '01953150933', 'Suzuki', 'bike', 'GIXXER', 'Gixxer113', 1, '2025-04-17 00:00:00');
@@ -242,6 +247,18 @@ INSERT INTO `product` (`Company_name`, `Product_type`, `Product_name`, `Product_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_recommendations`
+--
+
+CREATE TABLE `product_recommendations` (
+  `Email` varchar(200) NOT NULL,
+  `Recommended_Product_id` varchar(50) NOT NULL,
+  `Score` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `scooter`
 --
 
@@ -304,6 +321,8 @@ CREATE TABLE `sell` (
 
 INSERT INTO `sell` (`Buyer_Name`, `Buyer_Email`, `Buyer_Contact_no`, `Company_name`, `Product_type`, `Product_name`, `Product_id`, `Quantity`, `Booked_date`, `Sell_date`, `Prize`) VALUES
 ('Nasim', 'nasim@gmail.com', '01953150933', 'Castrol', 'Engine_Oil', 'Castrol 4L', 'castrol112', 4, '2025-04-14 00:00:00', '2025-04-14 00:00:00', 3000),
+('Nasim', 'nasim@gmail.com', '01953150933', 'Castrol', 'Engine_Oil', 'Castrol 4L', 'castrol112', 4, '2025-04-14 00:00:00', '2025-04-14 00:00:00', 3000),
+('Nasim', 'nasim@gmail.com', '01953150933', 'Castrol', 'Engine_Oil', 'Castrol 4L', 'castrol112', 4, '2025-04-14 00:00:00', '2025-04-14 00:00:00', 3000),
 ('Nasim', 'nasim@gmail.com', '01953150933', 'Castrol', 'Engine_Oil', 'Castrol 4L', 'castrol112', 4, '2025-04-14 00:00:00', '2025-04-14 00:00:00', 3000);
 
 -- --------------------------------------------------------
@@ -326,6 +345,8 @@ CREATE TABLE `signup` (
 INSERT INTO `signup` (`Name`, `Email`, `Contact_no`, `Password`) VALUES
 ('Admin', 'admin@dreamride.com', '01953150933', '$2y$10$t1XwKmC1GyadeH9YWYQtqefuiLDV1I8bPsaTV0lKrCQ28wUXG97Fq'),
 ('Munem', 'munem@gmail.com', '01953150933', '$2y$10$ZH9JvJxUthyrVMcIXDmwOuuJoHyw/q.mpIY8kRayiBDqkeg4j5lyq'),
+('Murad', 'murad@dr.com', '01745877767', '$2y$10$u7fGVHop.d5.YddttVkqRefTwTmoqNfDBpbO5oS5ytOb60VeycOcS'),
+('murad', 'murad@gmail.com', '01745877767', '$2y$10$At39JGFRv1Pgqvw8dSS.SOBVkwJ2sWa4HHY9kndtUAMXqAHCUJPBG'),
 ('Nasim', 'nasim@gmail.com', '01953150933', '$2y$10$jsJFw8ga2GnTbU7nzpRSk.7OJRRg0B4SnjB0mGjmTLJfh4TYZOB6K');
 
 -- --------------------------------------------------------
@@ -347,6 +368,30 @@ CREATE TABLE `sold_products` (
 ,`Sell_date` datetime
 ,`Prize` int(11)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_product_interaction`
+--
+
+CREATE TABLE `user_product_interaction` (
+  `Email` varchar(255) NOT NULL,
+  `Product_id` varchar(255) NOT NULL,
+  `Interaction_type` enum('view','book') NOT NULL,
+  `Interaction_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_product_interaction`
+--
+
+INSERT INTO `user_product_interaction` (`Email`, `Product_id`, `Interaction_type`, `Interaction_time`) VALUES
+('murad@dr.com', 'honda113', 'view', '2025-07-27 19:02:53'),
+('murad@dr.com', 'honda112', 'view', '2025-07-27 19:02:58'),
+('murad@dr.com', 'tvs113', 'view', '2025-07-27 19:03:23'),
+('murad@dr.com', 'tvs113', 'view', '2025-07-27 19:03:27'),
+('murad@dr.com', 'tvs113', 'book', '2025-07-27 19:03:28');
 
 -- --------------------------------------------------------
 
@@ -506,6 +551,13 @@ ALTER TABLE `product`
   ADD UNIQUE KEY `Product_id` (`Product_id`);
 
 --
+-- Indexes for table `product_recommendations`
+--
+ALTER TABLE `product_recommendations`
+  ADD PRIMARY KEY (`Email`,`Recommended_Product_id`),
+  ADD KEY `Recommended_Product_id` (`Recommended_Product_id`);
+
+--
 -- Indexes for table `scooter`
 --
 ALTER TABLE `scooter`
@@ -524,6 +576,13 @@ ALTER TABLE `sell`
 ALTER TABLE `signup`
   ADD PRIMARY KEY (`Name`,`Email`,`Contact_no`),
   ADD UNIQUE KEY `Email` (`Email`);
+
+--
+-- Indexes for table `user_product_interaction`
+--
+ALTER TABLE `user_product_interaction`
+  ADD KEY `Email` (`Email`),
+  ADD KEY `Product_id` (`Product_id`);
 
 --
 -- Constraints for dumped tables
@@ -555,6 +614,13 @@ ALTER TABLE `helmet`
   ADD CONSTRAINT `helmet_ibfk_1` FOREIGN KEY (`Company_name`,`Product_type`,`Product_name`,`Product_id`) REFERENCES `product` (`Company_name`, `Product_type`, `Product_name`, `Product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `product_recommendations`
+--
+ALTER TABLE `product_recommendations`
+  ADD CONSTRAINT `product_recommendations_ibfk_1` FOREIGN KEY (`Email`) REFERENCES `signup` (`Email`) ON DELETE CASCADE,
+  ADD CONSTRAINT `product_recommendations_ibfk_2` FOREIGN KEY (`Recommended_Product_id`) REFERENCES `product` (`Product_id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `scooter`
 --
 ALTER TABLE `scooter`
@@ -565,6 +631,13 @@ ALTER TABLE `scooter`
 --
 ALTER TABLE `sell`
   ADD CONSTRAINT `sell_ibfk_1` FOREIGN KEY (`Buyer_Email`,`Product_id`,`Booked_date`) REFERENCES `booked` (`Email`, `Product_id`, `Booked_date`);
+
+--
+-- Constraints for table `user_product_interaction`
+--
+ALTER TABLE `user_product_interaction`
+  ADD CONSTRAINT `user_product_interaction_ibfk_1` FOREIGN KEY (`Email`) REFERENCES `signup` (`Email`),
+  ADD CONSTRAINT `user_product_interaction_ibfk_2` FOREIGN KEY (`Product_id`) REFERENCES `product` (`Product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
