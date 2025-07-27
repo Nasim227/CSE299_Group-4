@@ -1,21 +1,20 @@
 <?php
-    session_start();
-
-    include("connection.php");
+session_start();
+include("connection.php");
 ?>
 
 <!DOCTYPE html>
- <html>
- <head>
-       <link rel="icon" type="image/png" href="../Images/logo2.png">
-      <title>Dream Ride</title> 
-      <link rel = "stylesheet" href="../css/prinfo.css">
-   </head>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../Images/logo2.png">
+    <title>Dream Ride</title> 
+    <link rel="stylesheet" href="../css/prinfo.css">
+</head>
 
-    <body>
-        <?php include("navbar.php"); ?>
+<body>
+<?php include("navbar.php"); ?>
 
-       <main >
+<main>
 <?php
 if (isset($_GET['product'])) {
     $product = mysqli_real_escape_string($conn, $_GET['product']);
@@ -35,7 +34,7 @@ if (isset($_GET['product'])) {
             $row = mysqli_fetch_assoc($result);
             $productData = $row;
             $productTable = $table;
-        
+
             echo '
             <div class="bik">
                 <div class="product-image">
@@ -43,7 +42,7 @@ if (isset($_GET['product'])) {
                 </div>
                 <div class="description">
                     <h2>' . htmlspecialchars($row['Product_name']) . '</h2>';
-        
+
             if ($table === 'bike' || $table === 'scooter') {
                 echo "Release Date: " . htmlspecialchars($row['Release_date']) . "<br>";
                 echo "Engine: " . htmlspecialchars($row['Engine']) . "<br>";
@@ -62,15 +61,15 @@ if (isset($_GET['product'])) {
                 echo "Available Quantity: " . htmlspecialchars($row['Available_qnty']) . "<br>";
                 echo "Price: ৳" . htmlspecialchars($row['Prize']) . "<br>";
             }
-        
+
             echo '
                 </div>
                 <div class="bk">';
-        
+
             if (isset($_SESSION["username"])) {
-                $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Unknown';
-                $email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Unknown';
-                $contact = isset($_SESSION['contact_no']) ? $_SESSION['contact_no'] : 'Unknown';
+                $name = $_SESSION['name'] ?? 'Unknown';
+                $email = $_SESSION['email'] ?? 'Unknown';
+                $contact = $_SESSION['contact_no'] ?? 'Unknown';
 
                 echo '
                     <form method="POST">
@@ -81,16 +80,28 @@ if (isset($_GET['product'])) {
             } else {
                 echo "<h3><strong>Please <a href='login.php'>Login</a> to book this product.</strong></h3>";
             }
-        
+
             echo '
                 </div>
             </div>';
-        
+
+            // ✅ Log product view if logged in
+            if (isset($_SESSION['email']) && isset($row['Product_id'])) {
+                echo '
+                <script>
+                    fetch("Interaction.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: "product_id=' . urlencode($row["Product_id"]) . '&interaction_type=view"
+                    });
+                </script>';
+            }
+
             $found = true;
             break;
         }
-        
-        
     }
 
     if (!$found) {
@@ -100,14 +111,15 @@ if (isset($_GET['product'])) {
     echo "<p>No product selected.</p>";
 }
 ?>
+
 <?php
 if (isset($_POST['book']) && isset($productData) && isset($_SESSION["username"])) {
     $quantity = intval($_POST['quantity']);
 
     if ($quantity > 0 && $quantity <= $productData['Available_qnty']) {
-        $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Unknown';
-        $email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Unknown';
-        $contact = isset($_SESSION['contact_no']) ? $_SESSION['contact_no'] : 'Unknown';
+        $name = $_SESSION['name'] ?? 'Unknown';
+        $email = $_SESSION['email'] ?? 'Unknown';
+        $contact = $_SESSION['contact_no'] ?? 'Unknown';
 
         $company = $productData['Company_name'];
         $productType = $productTable;
@@ -120,6 +132,18 @@ if (isset($_POST['book']) && isset($productData) && isset($_SESSION["username"])
 
         if ($stmt->execute()) {
             echo "<p style='color:green;'><strong>Product booked successfully!</strong></p>";
+
+            // ✅ Log booking interaction
+            echo '
+            <script>
+                fetch("Interaction.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: "product_id=' . urlencode($productId) . '&interaction_type=book"
+                });
+            </script>';
         } else {
             echo "<p style='color:red;'>Booking failed: " . htmlspecialchars($stmt->error) . "</p>";
         }
@@ -131,8 +155,6 @@ if (isset($_POST['book']) && isset($productData) && isset($_SESSION["username"])
 }
 ?>
 </main>
-
 <?php include("footer.html"); ?>
-
 </body>
 </html>

@@ -1,15 +1,12 @@
 <?php
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database_name = "dreamride";
-    $conn = "";
+$server = "localhost";
+$username = "root";
+$password = "";
+$database_name = "dreamride";
 
-    try{
-        $conn = mysqli_connect($server , $username , $password , $database_name);
-    }
-    catch(mysqli_sql_exception){
-        echo"Connection error!!<br>";
-    }
+$conn = mysqli_connect($server, $username, $password, $database_name);
 
+if (!$conn) {
+    die("❌ Database connection failed: " . mysqli_connect_error());
+}
 ?>
