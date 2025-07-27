@@ -1,0 +1,360 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f4e3;
+    color: #3e2723;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 40px);
+    margin-left: 0;
+    width: 100%;
+}
+
+.invoice-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 10px;
+}
+
+.invoice-header {
+    text-align: center;
+    border-bottom: 2px solid #a0522d;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.invoice-header h1 {
+    margin: 0;
+    color: #8b4513;
+    font-size: 2.2em;
+}
+
+.invoice-header p {
+    color: #5a3d2b;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.invoice-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.invoice-details table td {
+    padding: 8px 0;
+    vertical-align: top;
+    font-size: 0.95em;
+}
+
+.invoice-details table td strong {
+    color: #5a3d2b;
+}
+
+.invoice-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #c7b8a0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.invoice-items th, .invoice-items td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.invoice-items th {
+    background-color: #a0522d;
+    color: #f5f5dc;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.invoice-items tbody tr:nth-child(even) {
+    background-color: #f0e8d9;
+}
+
+.invoice-items tbody tr:hover {
+    background-color: #e8dfcc;
+}
+
+.invoice-items tfoot td {
+    font-weight: bold;
+    text-align: right;
+    border-top: 2px solid #a0522d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fdfaf5;
+    color: #3e2723;
+}
+
+.invoice-items tfoot td:last-child {
+    font-size: 1.2em;
+    color: #8b4513;
+}
+
+.invoice-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.invoice-actions button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.invoice-actions button:hover {
+    background-color: #0056b3;
+}
+
+.invoice-container > p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.invoice-container > p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.invoice-container > p a:hover {
+    text-decoration: underline;
+}
+
+.invoice-logo {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .invoice-container { 
+        padding: 20px; 
+    }
+    .invoice-header h1 { 
+        font-size: 1.8em; 
+    }
+    .invoice-items th, .invoice-items td { 
+        padding: 10px 12px; 
+        font-size: 0.9em; 
+    }
+    .invoice-items tfoot td { 
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+        font-size: 1em; 
+    }
+    .invoice-items tfoot td:last-child { 
+        font-size: 1.1em; 
+    }
+    .invoice-actions button { 
+        padding: 10px 20px; 
+        font-size: 1em; 
+    }
+}
+
+/* FIXED PRINT STYLES - NO MORE CUTTING */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-sizing: border-box;
+    }
+    
+    @page {
+        size: A4 portrait;
+        margin: 10mm 8mm 10mm 8mm; /* Reduced side margins */
+    }
+    
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        color: black !important;
+        font-size: 11pt;
+        line-height: 1.3;
+        overflow: hidden;
+    }
+    
+    main {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .invoice-container {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        border-radius: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 15pt !important; /* Reduced padding */
+        background: white !important;
+        overflow: hidden;
+    }
+    
+    .invoice-header {
+        border-bottom: 2px solid #000 !important;
+        padding-bottom: 12pt;
+        margin-bottom: 15pt;
+        page-break-inside: avoid;
+        text-align: center;
+    }
+    
+    .invoice-header h1 {
+        color: #000 !important;
+        font-size: 20pt; /* Reduced font size */
+        font-weight: bold;
+        margin: 8pt 0;
+    }
+    
+    .invoice-header p {
+        color: #000 !important;
+        font-size: 11pt;
+        margin: 4pt 0;
+    }
+    
+    .invoice-logo {
+        max-width: 150px; /* Reduced logo size */
+        height: auto;
+        margin-bottom: 8pt;
+    }
+    
+    .invoice-details table {
+        margin-bottom: 15pt;
+        page-break-inside: avoid;
+        width: 100%;
+        table-layout: fixed; /* Fixed table layout */
+    }
+    
+    .invoice-details table td {
+        padding: 4pt 2pt; /* Reduced padding */
+        font-size: 10pt;
+        color: #000 !important;
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    .invoice-details table td strong {
+        color: #000 !important;
+        font-weight: bold;
+    }
+    
+    .invoice-items {
+        page-break-inside: avoid;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .invoice-items table {
+        border: 1px solid #000 !important;
+        border-radius: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-collapse: collapse;
+        table-layout: fixed; /* Fixed table layout to prevent overflow */
+        font-size: 9pt; /* Smaller font for table */
+    }
+    
+    /* Fixed column widths to prevent overflow */
+    .invoice-items th:nth-child(1), .invoice-items td:nth-child(1) { width: 15%; } /* Product Type */
+    .invoice-items th:nth-child(2), .invoice-items td:nth-child(2) { width: 25%; } /* Product Name */
+    .invoice-items th:nth-child(3), .invoice-items td:nth-child(3) { width: 15%; } /* Product ID */
+    .invoice-items th:nth-child(4), .invoice-items td:nth-child(4) { width: 10%; } /* Quantity */
+    .invoice-items th:nth-child(5), .invoice-items td:nth-child(5) { width: 15%; } /* Unit Price */
+    .invoice-items th:nth-child(6), .invoice-items td:nth-child(6) { width: 20%; } /* Line Total */
+    
+    .invoice-items th {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        padding: 6pt 4pt; /* Reduced padding */
+        font-weight: bold;
+        font-size: 9pt;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .invoice-items td {
+        border: 1px solid #000 !important;
+        padding: 6pt 4pt; /* Reduced padding */
+        font-size: 9pt;
+        color: #000 !important;
+        background: white !important;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .invoice-items tbody tr:nth-child(even) {
+        background-color: #f9f9f9 !important;
+    }
+    
+    .invoice-items tfoot td {
+        border-top: 2px solid #000 !important;
+        border-left: 1px solid #000 !important;
+        border-right: 1px solid #000 !important;
+        border-bottom: 1px solid #000 !important;
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        font-weight: bold;
+        padding: 8pt 4pt;
+        font-size: 10pt;
+        word-wrap: break-word;
+    }
+    
+    .invoice-items tfoot td:last-child {
+        font-size: 11pt;
+        color: #000 !important;
+        font-weight: bold;
+        text-align: right;
+    }
+    
+    .invoice-actions,
+    .back-to-products-link {
+        display: none !important;
+    }
+    
+    /* Ensure no page breaks in critical areas */
+    .invoice-header,
+    .invoice-details,
+    .invoice-items {
+        page-break-inside: avoid;
+    }
+    
+    /* Prevent any overflow */
+    * {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+}
