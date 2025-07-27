@@ -247,7 +247,6 @@ elseif (isset($_GET['category']) && !is_array($_GET['category'])) {
 ?>
 </div>
 </main>
-
 <?php include("footer.html"); ?>
 
 </body>
