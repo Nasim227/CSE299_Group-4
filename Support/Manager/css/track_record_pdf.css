@@ -1,0 +1,193 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+.invoice-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.invoice-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.company-logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.header-details {
+    flex-grow: 1;
+}
+
+.company-name {
+    color: #172b4d;
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.invoice-details-text {
+    color: #52668c;
+    font-size: 1em;
+    margin: 5px 0 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+
+.icon-sales {
+    background: linear-gradient(45deg, #1f77f7, #69a7ff);
+}
+
+.icon-booked {
+    background: linear-gradient(45deg, #38d6a8, #71e8c0);
+}
+
+.summary-info h2 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #52668c;
+}
+
+.summary-info .amount {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 5px 0 0;
+    color: #172b4d;
+}
+
+.table-section {
+    margin-top: 40px;
+}
+
+.table-section h2 {
+    font-size: 1.8em;
+    color: #172b4d;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.data-table th {
+    background-color: #f9fbfd;
+    color: #52668c;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.invoice-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e6ed;
+}
+
+.print-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.print-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.no-data {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-size: 1.1em;
+    background-color: #f9fbfd;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .invoice-container {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+    .print-button {
+        display: none;
+    }
+    .table-container {
+        overflow-x: visible;
+    }
+}
