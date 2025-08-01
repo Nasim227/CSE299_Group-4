@@ -21,6 +21,7 @@
         <li><a href="booked.php">Booked Products</a></li>
         <li><a href="sold.php">Sold Products</a></li>
         <li><a href="printinvoice.php">Print Invoice</a></li>
+        <li><a href="track_record.php"><i class="fas fa-chart-line"></i><span>Track Records</span></a></a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </div>
