@@ -10,9 +10,9 @@ if (!$conn) {
 
 
 if (!isset($_SESSION['email'])) {
-    echo "<p style='text-align:center; color:darkred;'>Please login to see your recommendations.</p>";
-    exit();
+    echo "<p style='text-align:center; color:darkred;'>Please login to see your recommendations.</p>";   
 }
+else {
 
 $email = $_SESSION['email']; 
 
@@ -77,5 +77,6 @@ if ($category) {
     }
 
     echo '</div>';
+}
 }
 ?>
