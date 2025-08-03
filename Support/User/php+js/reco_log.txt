@@ -6,3 +6,135 @@
 
 
 
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com              Gixxer112  349950
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com              Gixxer112  349950
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com              Gixxer112  349950
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com              Gixxer112  349950
+5  nasim@gmail.com                 tvs111  274900
+6  nasim@gmail.com              yamaha118  270000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com               honda117  225000
+7  nasim@gmail.com              yamaha119  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com              yamaha118  270000
+5  nasim@gmail.com               honda117  225000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda113  212000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com              yamaha119  225000
+7  nasim@gmail.com               honda117  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com               honda117  225000
+7  nasim@gmail.com              yamaha119  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com               honda117  225000
+7  nasim@gmail.com              yamaha119  225000
+8 recommendations inserted successfully.
+
+Sample recommendations:
+             Email Recommended_Product_id   Score
+0     murad@dr.com                 tvs111  274900
+1     murad@dr.com              yamaha118  270000
+2     murad@dr.com              yamaha115  297500
+3     murad@dr.com              Gixxer113  249950
+4  nasim@gmail.com                 tvs111  274900
+5  nasim@gmail.com              yamaha118  270000
+6  nasim@gmail.com               honda117  225000
+7  nasim@gmail.com              yamaha119  225000
+8 recommendations inserted successfully.
+
