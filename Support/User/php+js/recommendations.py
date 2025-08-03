@@ -83,7 +83,7 @@ for email, user_df in user_groups:
 
 result_df = pd.concat(recommendations, ignore_index=True)
 
-print("✅ Sample recommendations:")
+print("Sample recommendations:")
 print(result_df.head(10))
 
 cursor.execute("SELECT Email FROM signup")
@@ -98,7 +98,7 @@ for email in result_df['Email'].unique():
     user_recs = result_df[result_df['Email'] == email]
 
     if email not in valid_emails:
-        print(f"⚠️ Skipping {email} — not in signup")
+        print(f"Skipping {email} — not in signup")
         continue
 
     cursor.execute("DELETE FROM product_recommendations WHERE Email = %s", (email,))
@@ -106,7 +106,7 @@ for email in result_df['Email'].unique():
     for _, row in user_recs.iterrows():
         product_id = row['Recommended_Product_id']
         if product_id not in valid_products:
-            print(f"⚠️ Invalid Product: {product_id} for {email}")
+            print(f"Invalid Product: {product_id} for {email}")
             continue
 
         try:
@@ -116,9 +116,9 @@ for email in result_df['Email'].unique():
             """, (email, product_id, float(row['Score'])))
             insert_count += 1
         except Exception as e:
-            print(f"❌ DB Error for {email} → {product_id}: {e}")
+            print(f"DB Error for {email} → {product_id}: {e}")
 
 conn.commit()
 conn.close()
 
-print(f"✅ {insert_count} recommendations inserted successfully.")
+print(f"{insert_count} recommendations inserted successfully.")

@@ -10,7 +10,7 @@ if (!$conn) {
 
 
 if (!isset($_SESSION['email'])) {
-    echo "<p style='text-align:center; color:darkred;'>Please login to see your recommendations.</p>";   
+    echo "";   
 }
 else {
 
